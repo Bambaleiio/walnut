@@ -7,16 +7,16 @@ delta = int(input("Enter the delta: "))
 # пусть она будет равна первому элементу массива
 mmin = array[0]
 
-# проходимся по всему массиву и если mmin < array[i], то mmin = array[i]
+# проходимся по всему массиву и если mmin < array[k], то mmin = array[k] (i = array[k])
 for i in array:
     mmin = min(i, mmin)
 
 # инициализируем переменную в которой будем хранить ответ (cnt от count, ну или cunt тут хз) 
 cnt = 0
 
-# считаем для всех элементов массива |a[i] - a_min|, если этот модуль равен дельте, то ответ увеличиваем на 1
+# если array[k] = min(array) + delta, то увеличиваем ответ на 1
 for i in array:
-    if abs(i - mmin) == delta:
+    if mmin + delta == i:
         cnt += 1
 
 # выводим ответ
